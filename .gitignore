@@ -1,0 +1,35 @@
+# Secrets — never commit any of these.
+# Covers .env, .env.local, .env.production, supabase/functions/.env.local, etc.
+.env*
+!.env.example
+**/.env*
+!**/.env.example
+
+# Dependencies and build output
+node_modules
+dist
+dist-ssr
+*.local
+*.tsbuildinfo
+
+# Load-simulation output (test-user passwords and reports live here)
+.sim/
+
+# Supabase CLI local state
+supabase/.branches
+supabase/.temp
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.sw?
+
+# Test-session exports (CSV with testers' messages): keep them out of Git
+data/

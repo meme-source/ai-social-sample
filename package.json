@@ -1,0 +1,52 @@
+{
+  "name": "ai-social-spike",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Teacher sample: a real-time group chat where humans and AI members talk in one room, with built-in test-session data collection.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "vite --host",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host",
+    "typecheck": "tsc -b",
+    "lint": "oxlint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:db": "supabase test db",
+    "check:functions": "npx -y deno@2 check supabase/functions/room-ai/index.ts",
+    "db:start": "supabase start -x studio,imgproxy,postgres-meta,supavisor",
+    "db:stop": "supabase stop",
+    "db:reset": "supabase db reset",
+    "functions:serve": "supabase functions serve --env-file supabase/functions/.env.local",
+    "mock-llm": "tsx scripts/mock-llm.ts",
+    "simulate": "tsx scripts/simulate.ts",
+    "verify:local": "tsx scripts/verify-local.ts",
+    "icons": "tsx scripts/make-icons.ts",
+    "env:local": "tsx scripts/write-env-local.ts",
+    "env:lan": "tsx scripts/write-env-local.ts --lan",
+    "make-admin": "tsx scripts/make-admin.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "wouter": "^3.13.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "supabase": "^3.1.0",
+    "tailwindcss": "^4.3.5",
+    "tsx": "^4.23.15",
+    "typescript": "~7.0.2",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}
